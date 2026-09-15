@@ -44,7 +44,8 @@ class _ToDoListState extends State<ToDoList> {
       Item(name: "Treecko", type: "grass"),
       Item(name: "Torchic", type: "fire"),
       Item(name: "Mudkip", type: "water"),
-      //Gen 4
+      //Might keep it small for the sake of not having to scroll so much
+      /*//Gen 4
       Item(name: "Turtwig", type: "grass"),
       Item(name: "Chimchar", type: "fire"),
       Item(name: "Piplup", type: "water"),
@@ -67,7 +68,7 @@ class _ToDoListState extends State<ToDoList> {
       // Gen 9
       Item(name: "Spirigatito", type: "grass"),
       Item(name: "Fuecoco", type: "fire"),
-      Item(name: "Quaxly", type: "water"),
+      Item(name: "Quaxly", type: "water"),*/
     ]);
   }
 
