@@ -12,45 +12,64 @@ class ToDoList extends StatefulWidget {
 }
 
 class _ToDoListState extends State<ToDoList> {
-  final List<Item> items = [const Item(name: "add more todos")];
+  final List<Item> items = [];
   final _itemSet = <Item>{};
 
-  void _handleListChanged(Item item, bool completed) {
-    setState(() {
-      // When a user changes what's in the list, you need
-      // to change _itemSet inside a setState call to
-      // trigger a rebuild.
-      // The framework then calls build, below,
-      // which updates the visual appearance of the app.
+  @override
+  void initState(){
+    super.initState();
+    _loadStarterPokemon();
+  }
 
-      items.remove(item);
-      if (!completed) {
-        print("Completing");
-        _itemSet.add(item);
-        items.add(item);
-      } else {
-        print("Making Undone");
-        _itemSet.remove(item);
-        items.insert(0, item);
-      }
+  void catchPokemon(String name){
+    setState(() {
+      final item = items.firstWhere((i) => i.name == name);
+      item.count++;
+      _itemSet.add(item);
     });
   }
 
-  void _handleDeleteItem(Item item) {
-    setState(() {
-      print("Deleting item");
-      items.remove(item);
-    });
+  void _loadStarterPokemon(){
+    items.addAll([
+      //Gen 1
+      Item(name: "Bulbasaur", type: "grass"),
+      Item(name: "Charmander", type: "fire"),
+      Item(name: "Squirtle", type: "water"),
+      //Gen 2
+      Item(name: "Chikorita", type: "grass"),
+      Item(name: "Cyndaquil", type: "fire"),
+      Item(name: "Tododile", type: "water"),
+      //Gen 3
+      Item(name: "Treecko", type: "grass"),
+      Item(name: "Torchic", type: "fire"),
+      Item(name: "Mudkip", type: "water"),
+      //Gen 4
+      Item(name: "Turtwig", type: "grass"),
+      Item(name: "Chimchar", type: "fire"),
+      Item(name: "Piplup", type: "water"),
+      //Gen 5
+      Item(name: "Snivy", type: "grass"),
+      Item(name: "Tepig", type: "fire"),
+      Item(name: "Oshawott", type: "water"),
+      //Gen 6
+      Item(name: "Chespin", type: "grass"),
+      Item(name: "Fennekin", type: "fire"),
+      Item(name: "Froakie", type: "water"),
+      //Gen 7
+      Item(name: "Rowlet", type: "grass"),
+      Item(name: "Litten", type: "fire"),
+      Item(name: "Popplio", type: "water"),
+      //Gen 8
+      Item(name: "Grookie", type: "grass"),
+      Item(name: "Scorbunny", type: "fire"),
+      Item(name: "Sobble", type: "water"),
+      // Gen 9
+      Item(name: "Spirigatito", type: "grass"),
+      Item(name: "Fuecoco", type: "fire"),
+      Item(name: "Quaxly", type: "water"),
+    ]);
   }
 
-  void _handleNewItem(String itemText, TextEditingController textController) {
-    setState(() {
-      print("Adding new item");
-      Item item = Item(name: itemText);
-      items.insert(0, item);
-      textController.clear();
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +82,10 @@ class _ToDoListState extends State<ToDoList> {
           children: items.map((item) {
             return ToDoListItem(
               item: item,
-              completed: _itemSet.contains(item),
-              onListChanged: _handleListChanged,
-              onDeleteItem: _handleDeleteItem,
+              //Completed going to be repurposed as Caught or !Caught
+              caught: _itemSet.contains(item),
             );
-          }).toList(),
+          }).toList(),  
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Stack(
@@ -99,18 +117,6 @@ class _ToDoListState extends State<ToDoList> {
                 child: Icon(Icons.arrow_forward,),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                child: const Icon(Icons.add),
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (_) {
-                        return ToDoDialog(onListAdded: _handleNewItem);
-                      });
-                }),
-           ),
           ],
         ),
     );
