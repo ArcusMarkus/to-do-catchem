@@ -11,20 +11,58 @@ class ToDoList extends StatefulWidget {
   State createState() => _ToDoListState();
 }
 
-class SecondScreen extends StatelessWidget{
-  const SecondScreen({super.key});
+// Pokemon Zones
+class FireZone
+ extends StatelessWidget{
+  const FireZone
+  ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Fire Zone')),
       body: const Center(
-        child: Text('This is the Fire Zone!')
+        child: Text('Catch Fire Pokemon Here!')
       ),
     );
 
   }
 }
+
+class GrassZone
+ extends StatelessWidget{
+  const GrassZone
+  ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Grass Zone')),
+      body: const Center(
+        child: Text('Catch Grass Pokemon Here!')
+      ),
+    );
+
+  }
+}
+
+class WaterZone
+ extends StatelessWidget{
+  const WaterZone
+  ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Water Zone')),
+      body: const Center(
+        child: Text('Catch Water Pokemon Here!')
+      ),
+    );
+
+  }
+}
+// Pokemon Zones
 
 class _ToDoListState extends State<ToDoList> {
   final List<Item> items = [];
@@ -112,7 +150,8 @@ class _ToDoListState extends State<ToDoList> {
               alignment: Alignment.bottomLeft,
                 child: FloatingActionButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()),
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const FireZone
+                    ()),
                     );
                   },
                   tooltip: 'Open Screen',
@@ -125,7 +164,11 @@ class _ToDoListState extends State<ToDoList> {
             Align(
               alignment: Alignment.bottomCenter,
                 child: FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GrassZone
+                    ()),
+                    );
+                  },
                   backgroundColor: Colors.green,
                   foregroundColor: const Color.fromARGB(255, 19, 65, 20),
                   child: Icon(Icons.arrow_upward),
@@ -135,7 +178,11 @@ class _ToDoListState extends State<ToDoList> {
             Align(
               alignment: Alignment.bottomRight,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const WaterZone
+                    ()),
+                    );
+                },
                 backgroundColor: Colors.blue,
                 foregroundColor: const Color.fromARGB(255, 10, 53, 88),
                 child: Icon(Icons.arrow_upward),
