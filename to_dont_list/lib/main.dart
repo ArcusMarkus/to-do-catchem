@@ -157,7 +157,7 @@ class _ToDoListState extends State<ToDoList> {
                   tooltip: 'Open Screen',
                   backgroundColor: Colors.red,
                   foregroundColor: const Color.fromARGB(255, 95, 20, 15),
-                  child: Icon(Icons.arrow_upward),
+                  child: const Icon(Icons.arrow_upward),
                 ),
               ),
             //Grass Type Zone
@@ -171,7 +171,7 @@ class _ToDoListState extends State<ToDoList> {
                   },
                   backgroundColor: Colors.green,
                   foregroundColor: const Color.fromARGB(255, 19, 65, 20),
-                  child: Icon(Icons.arrow_upward),
+                  child: const Icon(Icons.arrow_upward),
                 ),
               ),
             //Water Type Zone
@@ -185,7 +185,7 @@ class _ToDoListState extends State<ToDoList> {
                 },
                 backgroundColor: Colors.blue,
                 foregroundColor: const Color.fromARGB(255, 10, 53, 88),
-                child: Icon(Icons.arrow_upward),
+                child: const Icon(Icons.arrow_upward),
               ),
             ),
           ],

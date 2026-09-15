@@ -41,6 +41,7 @@ class ToDoListItem extends StatelessWidget {
       trailing: caught
       ? const Icon(Icons.check_circle, color: Colors.lightGreen,)
       : const Icon(Icons.check_circle_outline, color: Colors.grey)
+      // Perhaps a unit test to check if the checkmark are working
     );
   }
 }
