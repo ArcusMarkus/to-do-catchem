@@ -14,15 +14,17 @@ class ToDoListItem extends StatelessWidget {
   final Item item;
   final bool caught;
 
-  Color _getColor(BuildContext context) {
-    // The theme depends on the BuildContext because different
-    // parts of the tree can have different themes.
-    // The BuildContext indicates where the build is
-    // taking place and therefore which theme to use.
-
-    return caught //
-        ? Colors.black54
-        : Theme.of(context).primaryColor;
+  Color getTypeColor() {
+   switch (item.type){
+    case "fire":
+    return Colors.red;
+    case "green":
+    return Colors.green;
+    case "blue":
+    return Colors.blue;
+    default:
+    return Colors.black;
+   }
   }
 
   TextStyle? _getTextStyle(BuildContext context) {
@@ -38,7 +40,7 @@ class ToDoListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: _getColor(context),
+        backgroundColor: getTypeColor(),
         child: Text(item.abbrev()),
       ),
       title: Text(
