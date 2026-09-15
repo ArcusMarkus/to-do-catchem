@@ -18,9 +18,9 @@ class ToDoListItem extends StatelessWidget {
    switch (item.type){
     case "fire":
     return Colors.red;
-    case "green":
+    case "grass":
     return Colors.green;
-    case "blue":
+    case "water":
     return Colors.blue;
     default:
     return Colors.black;
