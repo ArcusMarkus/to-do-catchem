@@ -23,6 +23,7 @@ class _ToDoListState extends State<ToDoList> {
 
   void catchPokemon(String name){
     setState(() {
+      //(i) = pokemon in list, i.name = pokemon name, name = catchPokemon(name)
       final item = items.firstWhere((i) => i.name == name);
       item.count++;
       _itemSet.add(item);

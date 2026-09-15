@@ -37,14 +37,6 @@ class ToDoListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        onListChanged(item, caught);
-      },
-      onLongPress: caught
-          ? () {
-              onDeleteItem(item);
-            }
-          : null,
       leading: CircleAvatar(
         backgroundColor: _getColor(context),
         child: Text(item.abbrev()),
