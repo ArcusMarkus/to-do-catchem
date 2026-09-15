@@ -27,15 +27,6 @@ class ToDoListItem extends StatelessWidget {
    }
   }
 
-  TextStyle? _getTextStyle(BuildContext context) {
-    if (!caught) return null;
-
-    return const TextStyle(
-      color: Colors.black54,
-      decoration: TextDecoration.lineThrough,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -43,9 +34,9 @@ class ToDoListItem extends StatelessWidget {
         backgroundColor: getTypeColor(),
         child: Text(item.abbrev()),
       ),
-      title: Text(
-        item.name,
-        style: _getTextStyle(context),
+      title: Text(item.name),
+      subtitle: Text(
+        caught? "Caught: ${item.count}" : "Not caught",
       ),
     );
   }

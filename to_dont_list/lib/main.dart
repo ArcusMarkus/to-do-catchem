@@ -92,28 +92,25 @@ class _ToDoListState extends State<ToDoList> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Stack(
           children: [
+            //Fire Type Zone
             Align(
               alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 200),
                 child: FloatingActionButton(
                   onPressed: () {},
                   child: Icon(Icons.arrow_back,),
                 ),
               ),
-            ),
+            //Grass Type Zone
             Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 100),
+              alignment: Alignment.bottomCenter,
                 child: FloatingActionButton(
                   onPressed: () {},
                   child: Icon(Icons.add,),
                 ),
               ),
-            ),
+            //Water Type Zone
             Align(
-              alignment: Alignment.bottomLeft,
+              alignment: Alignment.bottomRight,
               child: FloatingActionButton(
                 onPressed: () {},
                 child: Icon(Icons.arrow_forward,),
