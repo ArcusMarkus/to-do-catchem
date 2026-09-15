@@ -38,6 +38,9 @@ class ToDoListItem extends StatelessWidget {
       subtitle: Text(
         caught? "Caught: ${item.count}" : "Not caught",
       ),
+      trailing: caught
+      ? const Icon(Icons.check_circle, color: Colors.lightGreen,)
+      : const Icon(Icons.check_circle_outline, color: Colors.grey)
     );
   }
 }
