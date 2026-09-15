@@ -69,15 +69,51 @@ class _ToDoListState extends State<ToDoList> {
             );
           }).toList(),
         ),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.add),
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (_) {
-                    return ToDoDialog(onListAdded: _handleNewItem);
-                  });
-            }));
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 200),
+                child: FloatingActionButton(
+                  onPressed: () {},
+                  child: Icon(Icons.arrow_back,),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 100),
+                child: FloatingActionButton(
+                  onPressed: () {},
+                  child: Icon(Icons.add,),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.arrow_forward,),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: FloatingActionButton(
+                child: const Icon(Icons.add),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (_) {
+                        return ToDoDialog(onListAdded: _handleNewItem);
+                      });
+                }),
+           ),
+          ],
+        ),
+    );
   }
 }
 
