@@ -77,7 +77,7 @@ class _ToDoListState extends State<ToDoList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('To Do List'),
+          title: const Text('Pokedex'),
         ),
         body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -97,7 +97,9 @@ class _ToDoListState extends State<ToDoList> {
               alignment: Alignment.bottomLeft,
                 child: FloatingActionButton(
                   onPressed: () {},
-                  child: Icon(Icons.arrow_back,),
+                  backgroundColor: Colors.red,
+                  foregroundColor: const Color.fromARGB(255, 95, 20, 15),
+                  child: Icon(Icons.arrow_upward),
                 ),
               ),
             //Grass Type Zone
@@ -105,7 +107,9 @@ class _ToDoListState extends State<ToDoList> {
               alignment: Alignment.bottomCenter,
                 child: FloatingActionButton(
                   onPressed: () {},
-                  child: Icon(Icons.add,),
+                  backgroundColor: Colors.green,
+                  foregroundColor: const Color.fromARGB(255, 19, 65, 20),
+                  child: Icon(Icons.arrow_upward),
                 ),
               ),
             //Water Type Zone
@@ -113,7 +117,9 @@ class _ToDoListState extends State<ToDoList> {
               alignment: Alignment.bottomRight,
               child: FloatingActionButton(
                 onPressed: () {},
-                child: Icon(Icons.arrow_forward,),
+                backgroundColor: Colors.blue,
+                foregroundColor: const Color.fromARGB(255, 10, 53, 88),
+                child: Icon(Icons.arrow_upward),
               ),
             ),
           ],
