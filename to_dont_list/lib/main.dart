@@ -11,6 +11,21 @@ class ToDoList extends StatefulWidget {
   State createState() => _ToDoListState();
 }
 
+class SecondScreen extends StatelessWidget{
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Fire Zone')),
+      body: const Center(
+        child: Text('This is the Fire Zone!')
+      ),
+    );
+
+  }
+}
+
 class _ToDoListState extends State<ToDoList> {
   final List<Item> items = [];
   final _itemSet = <Item>{};
@@ -96,7 +111,11 @@ class _ToDoListState extends State<ToDoList> {
             Align(
               alignment: Alignment.bottomLeft,
                 child: FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()),
+                    );
+                  },
+                  tooltip: 'Open Screen',
                   backgroundColor: Colors.red,
                   foregroundColor: const Color.fromARGB(255, 95, 20, 15),
                   child: Icon(Icons.arrow_upward),
