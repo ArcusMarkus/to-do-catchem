@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:to_dont_list/objects/item.dart';
 
-typedef ToDoListChangedCallback = Function(Item item, bool completed);
+typedef ToDoListChangedCallback = Function(Item item, bool caught);
 typedef ToDoListRemovedCallback = Function(Item item);
 
 class ToDoListItem extends StatelessWidget {
-  ToDoListItem(
+  const ToDoListItem(
       {required this.item,
-      required this.completed,
-      required this.onListChanged,
-      required this.onDeleteItem})
-      : super(key: ObjectKey(item));
+      required this.caught,
+      super.key
+      });
 
   final Item item;
-  final bool completed;
-
-  final ToDoListChangedCallback onListChanged;
-  final ToDoListRemovedCallback onDeleteItem;
+  final bool caught;
 
   Color _getColor(BuildContext context) {
     // The theme depends on the BuildContext because different
@@ -24,13 +20,13 @@ class ToDoListItem extends StatelessWidget {
     // The BuildContext indicates where the build is
     // taking place and therefore which theme to use.
 
-    return completed //
+    return caught //
         ? Colors.black54
         : Theme.of(context).primaryColor;
   }
 
   TextStyle? _getTextStyle(BuildContext context) {
-    if (!completed) return null;
+    if (!caught) return null;
 
     return const TextStyle(
       color: Colors.black54,
@@ -42,9 +38,9 @@ class ToDoListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        onListChanged(item, completed);
+        onListChanged(item, caught);
       },
-      onLongPress: completed
+      onLongPress: caught
           ? () {
               onDeleteItem(item);
             }
