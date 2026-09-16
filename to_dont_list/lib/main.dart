@@ -23,7 +23,7 @@ class FireZone
       backgroundColor: const Color.fromARGB(255, 252, 113, 103),
       appBar: AppBar(title: const Text('Fire Zone')),
       body: const Center(
-        child: Text('Catch Fire Pokemon Here!')
+        child: Text('Tap To Catch Fire Pokemon!')
       ),
     );
 
@@ -41,7 +41,7 @@ class GrassZone
       backgroundColor: const Color.fromARGB(255, 132, 246, 135),
       appBar: AppBar(title: const Text('Grass Zone')),
       body: const Center(
-        child: Text('Catch Grass Pokemon Here!')
+        child: Text('Tap To Catch Grass Pokemon!')
       ),
     );
 
@@ -59,7 +59,7 @@ class WaterZone
       backgroundColor: const Color.fromARGB(255, 119, 182, 234),
       appBar: AppBar(title: const Text('Water Zone')),
       body: const Center(
-        child: Text('Catch Water Pokemon Here!')
+        child: Text('Tap To Catch Water Pokemon!')
       ),
     );
 

@@ -36,7 +36,7 @@ void main() {
       const MaterialApp(home: FireZone()),
     );
     expect(find.text('Fire Zone'), findsOneWidget);
-    expect(find.text('Catch Fire Pokemon Here!'), findsOneWidget);
+    expect(find.text('Tap To Catch Fire Pokemon!'), findsOneWidget);
 
   });
 
@@ -45,7 +45,7 @@ void main() {
       const MaterialApp(home: GrassZone()),
     );
     expect(find.text('Grass Zone'), findsOneWidget);
-    expect(find.text('Catch Grass Pokemon Here!'), findsOneWidget);
+    expect(find.text('Tap To Catch Grass Pokemon!'), findsOneWidget);
 
   });
 
@@ -54,7 +54,7 @@ void main() {
       const MaterialApp(home: WaterZone()),
     );
     expect(find.text('Water Zone'), findsOneWidget);
-    expect(find.text('Catch Water Pokemon Here!'), findsOneWidget);
+    expect(find.text('Tap To Catch Water Pokemon!'), findsOneWidget);
 
   });
 
