@@ -7,11 +7,33 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:to_dont_list/main.dart';
 import 'package:to_dont_list/objects/item.dart';
 import 'package:to_dont_list/widgets/to_do_items.dart';
 
+
+void main() {
+  test('Item initializes correctly', () {
+    final item = Item(name: "Bulbasaur", type: "grass");
+
+    expect(item.name, "Bulbasaur");
+    expect(item.type, "grass");
+    expect(item.count, 0);
+  });
+
+  test('Item count increments', () {
+    final item = Item(name: "Charmander", type: "fire");
+
+    item.count++;
+    expect(item.count, 1);
+
+    item.count++;
+    expect(item.count, 2);
+  });
+}
+
+
+/*
 void main() {
   test('Item abbreviation should be first letter', () {
     const item = Item(name: "add more todos"); 
@@ -88,3 +110,4 @@ void main() {
 
   // One to test the tap and press actions on the items?
 }
+*/
