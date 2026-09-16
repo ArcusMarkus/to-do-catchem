@@ -40,6 +40,24 @@ void main() {
 
   });
 
+  testWidgets('Grasszone Loads Correctly', (tester) async{
+    await tester.pumpWidget(
+      const MaterialApp(home: GrassZone()),
+    );
+    expect(find.text('Grass Zone'), findsOneWidget);
+    expect(find.text('Catch Grass Pokemon Here!'), findsOneWidget);
+
+  });
+
+  testWidgets('Waterzone Loads Correctly', (tester) async{
+    await tester.pumpWidget(
+      const MaterialApp(home: WaterZone()),
+    );
+    expect(find.text('Water Zone'), findsOneWidget);
+    expect(find.text('Catch Water Pokemon Here!'), findsOneWidget);
+
+  });
+
 }
 
   
