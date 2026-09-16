@@ -30,8 +30,19 @@ void main() {
     item.count++;
     expect(item.count, 2);
   });
+
+  testWidgets('Firezone Loads Correctly', (tester) async{
+    await tester.pumpWidget(
+      const MaterialApp(home: FireZone()),
+    );
+    expect(find.text('Fire Zone'), findsOneWidget);
+    expect(find.text('Catch Fire Pokemon Here!'), findsOneWidget);
+
+  });
+
 }
 
+  
 
 /*
 void main() {
