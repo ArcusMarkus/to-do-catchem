@@ -20,6 +20,7 @@ class FireZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 252, 113, 103),
       appBar: AppBar(title: const Text('Fire Zone')),
       body: const Center(
         child: Text('Catch Fire Pokemon Here!')
@@ -37,6 +38,7 @@ class GrassZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 132, 246, 135),
       appBar: AppBar(title: const Text('Grass Zone')),
       body: const Center(
         child: Text('Catch Grass Pokemon Here!')
@@ -54,6 +56,7 @@ class WaterZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 119, 182, 234),
       appBar: AppBar(title: const Text('Water Zone')),
       body: const Center(
         child: Text('Catch Water Pokemon Here!')
