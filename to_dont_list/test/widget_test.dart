@@ -58,6 +58,16 @@ void main() {
 
   });
 
+  testWidgets('Pokemon Load Coreectly', (tester) async{
+    await tester.pumpWidget(
+      const MaterialApp(home: ToDoList()),
+    );
+
+    expect(find.text('Bulbasaur'), findsOneWidget);
+    expect(find.text('Charmander'), findsOneWidget);
+    expect(find.text('Squirtle'), findsOneWidget);
+  });
+
 }
 
   
