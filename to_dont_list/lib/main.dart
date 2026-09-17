@@ -1,8 +1,7 @@
 // Started with https://docs.flutter.dev/development/ui/widgets-intro
 import 'package:flutter/material.dart';
-import 'package:to_dont_list/objects/item.dart';
+import 'package:to_dont_list/objects/pokemon.dart';
 import 'package:to_dont_list/widgets/to_do_items.dart';
-import 'package:to_dont_list/widgets/to_do_dialog.dart';
 
 class ToDoList extends StatefulWidget {
   const ToDoList({super.key});
@@ -68,8 +67,8 @@ class WaterZone
 // Pokemon Zones
 
 class _ToDoListState extends State<ToDoList> {
-  final List<Item> items = [];
-  final _itemSet = <Item>{};
+  final List<Pokemon> items = [];
+  final _itemSet = <Pokemon>{};
 
   @override
   void initState(){
@@ -89,17 +88,17 @@ class _ToDoListState extends State<ToDoList> {
   void _loadStarterPokemon(){
     items.addAll([
       //Gen 1
-      Item(name: "Bulbasaur", type: "grass"),
-      Item(name: "Charmander", type: "fire"),
-      Item(name: "Squirtle", type: "water"),
+      Pokemon(name: "Bulbasaur", type: "grass"),
+      Pokemon(name: "Charmander", type: "fire"),
+      Pokemon(name: "Squirtle", type: "water"),
       //Gen 2
-      Item(name: "Chikorita", type: "grass"),
-      Item(name: "Cyndaquil", type: "fire"),
-      Item(name: "Tododile", type: "water"),
+      Pokemon(name: "Chikorita", type: "grass"),
+      Pokemon(name: "Cyndaquil", type: "fire"),
+      Pokemon(name: "Tododile", type: "water"),
       //Gen 3
-      Item(name: "Treecko", type: "grass"),
-      Item(name: "Torchic", type: "fire"),
-      Item(name: "Mudkip", type: "water"),
+      Pokemon(name: "Treecko", type: "grass"),
+      Pokemon(name: "Torchic", type: "fire"),
+      Pokemon(name: "Mudkip", type: "water"),
       //Might keep it small for the sake of not having to scroll so much
       /*//Gen 4
       Item(name: "Turtwig", type: "grass"),

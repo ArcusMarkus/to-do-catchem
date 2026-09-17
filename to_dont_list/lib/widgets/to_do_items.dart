@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:to_dont_list/objects/item.dart';
+import 'package:to_dont_list/objects/pokemon.dart';
 
-typedef ToDoListChangedCallback = Function(Item item, bool caught);
-typedef ToDoListRemovedCallback = Function(Item item);
+typedef ToDoListChangedCallback = Function(Pokemon item, bool caught);
+typedef ToDoListRemovedCallback = Function(Pokemon item);
 
 class ToDoListItem extends StatelessWidget {
   const ToDoListItem(
@@ -11,7 +11,7 @@ class ToDoListItem extends StatelessWidget {
       super.key
       });
 
-  final Item item;
+  final Pokemon item;
   final bool caught;
 
   Color getTypeColor() {
