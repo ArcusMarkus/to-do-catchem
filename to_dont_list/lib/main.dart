@@ -3,6 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:to_dont_list/objects/pokemon.dart';
 import 'package:to_dont_list/widgets/to_do_items.dart';
 
+final ThemeData theme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(seedColor: Colors.green).copyWith(
+    primary: const Color.fromARGB(255, 91, 230, 96),
+    onPrimary: const Color.fromARGB(255, 36, 115, 38),
+    secondary: const Color.fromARGB(255, 86, 174, 247),
+    onSecondary: const Color.fromARGB(255, 25, 94, 150),
+    tertiary: Colors.red,
+    onTertiary: const Color.fromARGB(255, 136, 36, 29),
+    
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20),
+    ),
+  ),
+);
+
 class ToDoList extends StatefulWidget {
   const ToDoList({super.key});
 
@@ -19,8 +36,12 @@ class FireZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 252, 113, 103),
-      appBar: AppBar(title: const Text('Fire Zone')),
+      backgroundColor: Theme.of(context).colorScheme.onTertiary,
+      appBar: AppBar(
+        title: const Text('Fire Zone'),
+        centerTitle: true,
+        titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+      ),
       body: const Center(
         child: Text('Tap To Catch Fire Pokemon!')
       ),
@@ -37,8 +58,9 @@ class GrassZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 132, 246, 135),
-      appBar: AppBar(title: const Text('Grass Zone')),
+      backgroundColor: Theme.of(context).colorScheme.onPrimary,
+      appBar: AppBar(title: const Text('Grass Zone'), centerTitle: true,
+        titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),),
       body: const Center(
         child: Text('Tap To Catch Grass Pokemon!')
       ),
@@ -55,8 +77,9 @@ class WaterZone
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 119, 182, 234),
-      appBar: AppBar(title: const Text('Water Zone')),
+      backgroundColor: Theme.of(context).colorScheme.onSecondary,
+      appBar: AppBar(title: const Text('Water Zone'), centerTitle: true,
+        titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),),
       body: const Center(
         child: Text('Tap To Catch Water Pokemon!')
       ),
@@ -130,6 +153,7 @@ class _ToDoListState extends State<ToDoList> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return Scaffold(
         appBar: AppBar(
           title: const Text('Pokedex'),
@@ -156,10 +180,10 @@ class _ToDoListState extends State<ToDoList> {
                     ()),
                     );
                   },
-                  tooltip: 'Open Screen',
-                  backgroundColor: Colors.red,
-                  foregroundColor: const Color.fromARGB(255, 95, 20, 15),
-                  child: const Icon(Icons.arrow_upward),
+                  tooltip: 'Open Fire Zone',
+                  backgroundColor: colors.tertiary,
+                  foregroundColor: colors.onTertiary,
+                  child: const Icon(Icons.local_fire_department),
                 ),
               ),
             //Grass Type Zone
@@ -171,9 +195,10 @@ class _ToDoListState extends State<ToDoList> {
                     ()),
                     );
                   },
-                  backgroundColor: Colors.green,
-                  foregroundColor: const Color.fromARGB(255, 19, 65, 20),
-                  child: const Icon(Icons.arrow_upward),
+                  tooltip: 'Open Grass Zone',
+                  backgroundColor: colors.primary,
+                  foregroundColor: colors.onPrimary,
+                  child: const Icon(Icons.grass),
                 ),
               ),
             //Water Type Zone
@@ -185,9 +210,10 @@ class _ToDoListState extends State<ToDoList> {
                     ()),
                     );
                 },
-                backgroundColor: Colors.blue,
-                foregroundColor: const Color.fromARGB(255, 10, 53, 88),
-                child: const Icon(Icons.arrow_upward),
+                tooltip: 'Open Water Zone',
+                backgroundColor: colors.secondary,
+                foregroundColor: colors.onSecondary,
+                child: const Icon(Icons.waves),
               ),
             ),
           ],
@@ -197,8 +223,9 @@ class _ToDoListState extends State<ToDoList> {
 }
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     title: 'To Do List',
-    home: ToDoList(),
+    theme: theme,
+    home: const ToDoList(),
   ));
 }
